@@ -3,8 +3,10 @@ class Program
 {
     static void Main(string[] args)
     {
+
         // example of overloads
-        Greet("Hi", "Patryk", 1234); // string
+        Person.Greet("hi");
+        
     }
     
     // Greet passes the (String) data to Console.WriteLine
@@ -12,12 +14,23 @@ class Program
     {
         Console.WriteLine(data);
     }
-    static void Greet(string data, string moreData)
+}
+
+class Person
+{
+    // class properties?
+    public string Name { get; set; }
+    // The very weird looking `{ get; set; }` must be there. We will explain this later :)
+
+
+    static void showPersonalNumber()
     {
-        Console.WriteLine(data + moreData);
+        Console.WriteLine(12345678);
     }
-    static void Greet(string data, string moreData, int evenMoreData)
+
+    // Greet function, prints users name and a greeting
+    public static void Greet(string data)
     {
-        Console.WriteLine(data + moreData + evenMoreData);
+        Console.WriteLine(data);
     }
 }
