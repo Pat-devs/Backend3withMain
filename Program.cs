@@ -3,9 +3,15 @@ class Program
 {
     static void Main(string[] args)
     {
+        //string Name = "Lol";
 
         // example of overloads
         Person.Greet("hi");
+
+        Person.Name = "test";
+        
+        Console.WriteLine(Person.Name);
+
         
     }
     
@@ -16,12 +22,13 @@ class Program
     }
 }
 
+// a custom class (note this should normally go into its own file)
 class Person
 {
-    // class properties?
-    public string Name { get; set; }
+    // class properties? (static properties -- similar to "normal" variables)
+    public static string Name { get; set; }
     // The very weird looking `{ get; set; }` must be there. We will explain this later :)
-
+    public static int Age { get; set; }
 
     static void showPersonalNumber()
     {
