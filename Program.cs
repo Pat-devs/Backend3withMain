@@ -3,11 +3,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        // overloads in built in methods
-        Console.WriteLine("Hi"); // WriteLine can take a string (this is one overload)
-
-        Console.WriteLine(1234); // another overload
-
-        Console.WriteLine('A'); // another overload
+        // example of overloads
+        Greet("Hi");
+        Greet(1234);
+    }
+    
+    // Greet passes the (String) data to Console.WriteLine
+    static void Greet(string data)
+    {
+        Console.WriteLine(data);
+    }
+    // Interger friendly overload of Greet.
+    static void Greet(int data)
+    {
+        Console.WriteLine(data);
     }
 }
