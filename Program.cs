@@ -4,8 +4,9 @@ class Program
     static void Main(string[] args)
     {
         // example of overloads
-        Greet("Hi");
-        Greet(1234);
+        Greet("Hi"); // string
+        Greet(1234); // int
+        Greet('Q'); // char
     }
     
     // Greet passes the (String) data to Console.WriteLine
@@ -15,6 +16,11 @@ class Program
     }
     // Interger friendly overload of Greet.
     static void Greet(int data)
+    {
+        Console.WriteLine(data);
+    }
+    // Char overload
+    static void Greet(char data)
     {
         Console.WriteLine(data);
     }
