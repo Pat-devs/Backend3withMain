@@ -3,8 +3,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(args[0]); // example using arguments from CLI: 
-        // Example: dotnet run "god morgen" 
-        // will output "god morgen" 
+        // we need to write code inside here
+        Console.WriteLine("hello");
     }
 }
+
+// no code here.
