@@ -3,9 +3,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        // we need to write code inside here
-        Console.WriteLine("hello");
+        // overloads in built in methods
+        Console.WriteLine("Hi"); // WriteLine can take a string (this is one overload)
+
+        Console.WriteLine(1234); // another overload
+
+        Console.WriteLine('A'); // another overload
     }
 }
-
-// no code here.
