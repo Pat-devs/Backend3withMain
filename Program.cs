@@ -5,13 +5,20 @@ class Program
     {  
         Console.Clear();
         // user writes their words, separeted by comma
-        string userInputWords = "coffee,tea,milk";
+        string userInputTags = "coffee,tea,milk";
         // .Split is useful to convert strings into array by a common separator symbol
-        string[] words = userInputWords.Split(",");
+        string[] tagsArray = userInputTags.Split(",");
 
-        foreach(string word in words)
+        // if we have an array, but suddenly need a list:
+        // 1. Declare an empty list:
+        List<string> tagsList = new List<string>();
+        // 2. fill the list with items from the array
+        foreach (string item in tagsArray) // item is the tag in the tagsArray
         {
-            Console.WriteLine(word);
+            tagsList.Add(item); 
         }
+
+        TagPrinter.Print(tagsList);
+
     }
 }
