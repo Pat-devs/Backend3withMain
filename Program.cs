@@ -3,8 +3,25 @@ class Program
 {
     static void Main(string[] args)
     {  
-        Greeter.Greet(); // invoke Greet method 
-        Greeter.Greet("God morgen"); // invoke the Greet method overload that supports a string as argument
-        Greeter.Greet("You are ", 20); // // invoke the Greet method overload that supports a string (message) as argument and a number (age) as second argument
+        // user writes their words, separeted by comma
+        //string userInputWords = "coffee;tea,milk";
+        // .Split is useful to convert strings into array by a common separator symbol
+        //string[] words = userInputWords.Split("e");
+
+        //foreach(string word in words)
+        //{
+        //    Console.WriteLine(word);
+        //}
+        string whateverText = "omglolah0iu8y7gtyadklhh";
+
+        string[] things = whateverText.Split("0");
+
+        Console.Clear();
+
+        foreach (string x in things)
+        {
+            Console.WriteLine();
+            Console.WriteLine(x);
+        }
     }
 }
