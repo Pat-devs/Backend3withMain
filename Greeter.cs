@@ -4,8 +4,12 @@ class Greeter
     {
         Console.WriteLine("Hello world!");
     }
-    public static void Greet(string message)
+    public static void Greet(string message) // overload with message as argument
     {
         Console.WriteLine(message);
+    }
+    public static void Greet(string message, int age) // overload with message and users age
+    {
+        Console.WriteLine(message + " you are " + age + " years old.");
     }
 }
