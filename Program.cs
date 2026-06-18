@@ -15,7 +15,9 @@ class Program
             Console.WriteLine("Tag manager");
             Console.WriteLine("1. Enter new tags");
             Console.WriteLine("2. Show current tags");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Save tags");
+            Console.WriteLine("4. Load tags");
+            Console.WriteLine("5. Exit");
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
@@ -34,6 +36,15 @@ class Program
                 TagPrinter.Print(tagsList);
             }
             else if (choice == 3)
+            {
+                string filePath = "taglist.txt"; // file path (folder + filename)
+                File.WriteAllLines(filePath, tagsList);
+            }
+            else if (choice == 4)
+            {
+                
+            }
+            else if (choice == 5)
             {
                 running = false;
             }
