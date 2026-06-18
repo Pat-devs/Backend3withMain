@@ -1,20 +1,55 @@
-﻿namespace Backend3withMain;
+﻿using System.Security.Cryptography;
+
+namespace Backend3withMain;
 class Program
 {
     static void Main(string[] args)
     {  
+
+        // initialize the tagslist as an empty list
+        List<string> tagsList = new List<string>();
+
         Console.Clear();
+        bool running = true;
 
-        // get input tags from user
-        Console.WriteLine("Enter tags separated by comma:");
-        string userInputTags = Console.ReadLine();
+        while (running)
+        {       
+            Console.WriteLine("Tag manager");
+            Console.WriteLine("1. Enter new tags");
+            Console.WriteLine("2. Show current tags");
+            Console.WriteLine("3. Exit");
+            Console.WriteLine();
+            Console.Write("Choose an option: ");
 
-        List<string> tagsList = ParseTags(userInputTags);
-        TagPrinter.Print(tagsList);
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                // get input tags from user
+                Console.WriteLine("Enter tags separated by comma:");
+                string userInputTags = Console.ReadLine();
+                tagsList = ParseTags(userInputTags);
+            }
+            else if (choice == "2")
+            {
+                TagPrinter.Print(tagsList);
+            }
+            else if (choice == "3")
+            {
+                running = false;
+            }
+            else
+            {
+                Console.WriteLine("invalid choice");
+            }
+
+            //running = false;
+        }
 
     }
     static List<string> ParseTags(string input)
     {
+        // TODO-idea; check if tag already exists
         string[] tagsArray = input.Split(",");
         List<string> tagsList = new List<string>();
         
