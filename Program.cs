@@ -4,21 +4,28 @@ class Program
     static void Main(string[] args)
     {  
         Console.Clear();
-        // user writes their words, separeted by comma
-        string userInputTags = "coffee,tea,milk";
-        // .Split is useful to convert strings into array by a common separator symbol
-        string[] tagsArray = userInputTags.Split(",");
 
-        // if we have an array, but suddenly need a list:
-        // 1. Declare an empty list:
-        List<string> tagsList = new List<string>();
-        // 2. fill the list with items from the array
-        foreach (string item in tagsArray) // item is the tag in the tagsArray
-        {
-            tagsList.Add(item); 
-        }
+        // get input tags from user
+        Console.WriteLine("Enter tags separated by comma:");
+        string userInputTags = Console.ReadLine();
 
+        List<string> tagsList = ParseTags(userInputTags);
         TagPrinter.Print(tagsList);
 
     }
+    static List<string> ParseTags(string input)
+    {
+        string[] tagsArray = input.Split(",");
+        List<string> tagsList = new List<string>();
+        
+        foreach (string item in tagsArray)
+        {
+            // cleanup the tag 
+            string cleanedItem = item.Trim();
+            tagsList.Add(cleanedItem); 
+        }
+
+        return tagsList;
+    }
+
 }
