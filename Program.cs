@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace Backend3withMain;
+﻿namespace Backend3withMain;
 class Program
 {
     static void Main(string[] args)
@@ -21,20 +19,21 @@ class Program
             Console.WriteLine();
             Console.Write("Choose an option: ");
 
-            string choice = Console.ReadLine();
+            int choice = 0;
 
-            if (choice == "1")
+            bool isInputValid = int.TryParse(Console.ReadLine(), out choice);
+
+            if (choice == 1)
             {
-                // get input tags from user
                 Console.WriteLine("Enter tags separated by comma:");
                 string userInputTags = Console.ReadLine();
                 tagsList = ParseTags(userInputTags);
             }
-            else if (choice == "2")
+            else if (choice == 2)
             {
                 TagPrinter.Print(tagsList);
             }
-            else if (choice == "3")
+            else if (choice == 3)
             {
                 running = false;
             }
@@ -42,8 +41,6 @@ class Program
             {
                 Console.WriteLine("invalid choice");
             }
-
-            //running = false;
         }
 
     }
