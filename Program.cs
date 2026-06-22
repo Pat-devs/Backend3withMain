@@ -66,6 +66,12 @@ class Program
         }
 
     }
+
+    /// <summary>
+    /// Parses input strings, removing any whitespaces into a list
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns>Tagslist</returns>
     static List<string> ParseTags(string input)
     {
         // TODO-idea; check if tag already exists
